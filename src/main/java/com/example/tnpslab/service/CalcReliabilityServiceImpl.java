@@ -7,9 +7,20 @@ import java.util.List;
 import java.util.Map;
 
 public class CalcReliabilityServiceImpl extends CalcReliabilityServiceBase implements CalcReliabilityService {
+    private Map<String, SystemDifferentialEquations> systemDifferentialEquationsMap;
     @Override
-    public String calculate(Map<String, Double> inputValues, double initialValOfT, double finalValOfT, double stepSize) {
-        SystemDifferentialEquations systemDifferentialEquations = new SystemDifferentialEquationsLab2(inputValues);
+    public void setSystemDifferentialEquationsMap(Map<String, SystemDifferentialEquations> systemDifferentialEquationsMap) {
+        this.systemDifferentialEquationsMap = systemDifferentialEquationsMap;
+    }
+    @Override
+    public String calculate(String systemDifferentialEquationsKey, Map<String, Double> inputRates, double initialValOfT, double finalValOfT, double stepSize) {
+        SystemDifferentialEquations systemDifferentialEquations = systemDifferentialEquationsMap.get(systemDifferentialEquationsKey);
+        if (systemDifferentialEquations == null) {
+            throw new IllegalArgumentException(
+                    String.format("Class for systemDifferentialEquationsKey='%s' is not defined", systemDifferentialEquationsKey)
+            );
+        }
+        systemDifferentialEquations.setInputRates(inputRates);
 
         // Initial values
         double[] initialValOfP = new double[systemDifferentialEquations.getNumberODEs()];
@@ -25,7 +36,7 @@ public class CalcReliabilityServiceImpl extends CalcReliabilityServiceBase imple
         // Call Fourth Order Runge-Kutta method
         double[] rungeKuttaResult = rungeKutta.fourthOrder(systemDifferentialEquations);
 
-        // Output the results
+        // Make result
         resetResult();
         appendResultText("Result with Runge-Kutta fourthOrder method:");
         double resultSum = 0.0;

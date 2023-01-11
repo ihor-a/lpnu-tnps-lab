@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -17,7 +18,7 @@
    <Pane prefHeight="865.0" prefWidth="837.0">
       <children>
          <TextArea fx:id="resultArea" layoutX="350.0" layoutY="23.0" prefHeight="844.0" prefWidth="374.0" />
-          <Button layoutX="148.0" layoutY="483.0" onAction="#onCalculateButtonClick" text="Calculate" />
+          <Button layoutX="139.0" layoutY="627.0" onAction="#onCalculateButtonClick" text="Calculate" />
          <Label layoutX="491.0" layoutY="6.0" prefHeight="17.0" prefWidth="104.0" text="Result Area" />
          <Label layoutX="14.0" layoutY="211.0" prefHeight="17.0" prefWidth="21.0" text="λ1" />
          <TextField fx:id="m1" layoutX="209.0" layoutY="206.0" prefHeight="26.0" prefWidth="115.0" />
@@ -36,6 +37,21 @@
          <TextField fx:id="m3" layoutX="209.0" layoutY="298.0" prefHeight="26.0" prefWidth="115.0" />
          <TextField fx:id="m4" layoutX="209.0" layoutY="345.0" prefHeight="26.0" prefWidth="115.0" />
          <TextField fx:id="m5" layoutX="209.0" layoutY="390.0" prefHeight="26.0" prefWidth="115.0" />
+         <RadioButton fx:id="lab1" layoutX="81.0" layoutY="563.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="68.0" text="Lab 1" />
+         <RadioButton fx:id="lab2" layoutX="203.0" layoutY="563.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="68.0" text="Lab 2" />
+         <Label layoutX="14.0" layoutY="257.0" prefHeight="17.0" prefWidth="21.0" text="λ2" />
+         <Label layoutX="14.0" layoutY="303.0" prefHeight="17.0" prefWidth="21.0" text="λ3" />
+         <Label layoutX="14.0" layoutY="350.0" prefHeight="17.0" prefWidth="21.0" text="λ4" />
+         <Label layoutX="14.0" layoutY="395.0" prefHeight="17.0" prefWidth="21.0" text="λ5" />
+         <Label layoutX="182.0" layoutY="303.0" prefHeight="17.0" prefWidth="21.0" text="μ3" />
+         <Label layoutX="182.0" layoutY="257.0" prefHeight="17.0" prefWidth="21.0" text="μ2" />
+         <Label layoutX="182.0" layoutY="350.0" prefHeight="17.0" prefWidth="21.0" text="μ4" />
+         <Label layoutX="182.0" layoutY="395.0" prefHeight="17.0" prefWidth="21.0" text="μ5" />
+         <TextField fx:id="finalValOfT" layoutX="209.0" layoutY="445.0" prefHeight="26.0" prefWidth="115.0" />
+         <TextField fx:id="stepSize" layoutX="209.0" layoutY="490.0" prefHeight="26.0" prefWidth="115.0" />
+         <Label layoutX="96.0" layoutY="495.0" prefHeight="17.0" prefWidth="60.0" text="Step Size" />
+         <Label layoutX="71.0" layoutY="450.0" prefHeight="17.0" prefWidth="87.0" text="Final Value of t" />
+         <Label layoutX="42.0" layoutY="827.0" prefHeight="17.0" prefWidth="280.0" text="Builded with (c) Flanagan's Java Scientific Library" />
       </children>
    </Pane>
 </VBox>

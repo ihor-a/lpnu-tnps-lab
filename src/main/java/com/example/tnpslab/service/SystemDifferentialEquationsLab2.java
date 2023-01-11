@@ -4,24 +4,22 @@ import java.util.Map;
 
 public class SystemDifferentialEquationsLab2 implements SystemDifferentialEquations {
 
-    private final double l1, m1;
-    private final double l2, m2;
-    private final double l3, m3;
-    private final double l4, m4;
-    private final double l5, m5;
+    private double l1, m1, l2, m2, l3, m3, l4, m4, l5, m5;
 
-    SystemDifferentialEquationsLab2(Map<String, Double> inputValues) {
-        l1 = inputValues.get("l1");
-        l2 = inputValues.get("l2");
-        l3 = inputValues.get("l3");
-        l4 = inputValues.get("l4");
-        l5 = inputValues.get("l5");
-        m1 = inputValues.get("m1");
-        m2 = inputValues.get("m2");
-        m3 = inputValues.get("m3");
-        m4 = inputValues.get("m4");
-        m5 = inputValues.get("m5");
+    @Override
+    public void setInputRates(Map<String, Double> inputRates) {
+        l1 = inputRates.get("l1");
+        l2 = inputRates.get("l2");
+        l3 = inputRates.get("l3");
+        l4 = inputRates.get("l4");
+        l5 = inputRates.get("l5");
+        m1 = inputRates.get("m1");
+        m2 = inputRates.get("m2");
+        m3 = inputRates.get("m3");
+        m4 = inputRates.get("m4");
+        m5 = inputRates.get("m5");
     }
+
     @Override
     public int getNumberODEs() {
         return 76;
